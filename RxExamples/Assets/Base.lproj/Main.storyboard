@@ -36,7 +36,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
-                            <tableViewSection headerTitle="Simple" id="eI8-JG-cie">
+                            <tableViewSection headerTitle="Simple Examples" id="eI8-JG-cie">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="xBB-1r-f2N" style="IBUITableViewCellStyleDefault" id="qdc-WJ-nHy">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -56,6 +56,26 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="ukJ-pu-lK7" kind="show" id="M17-eb-5ow"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="xYo-F1-V8c" style="IBUITableViewCellStyleDefault" id="des-Cf-cch">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="des-Cf-cch" id="NeI-xi-zJx">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Form Validation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xYo-F1-V8c">
+                                                    <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="nlV-jt-zdX" kind="show" id="ZVs-Zn-N4O"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -78,7 +98,15 @@
                 <viewControllerPlaceholder storyboardName="Adder" id="ukJ-pu-lK7" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6uH-yk-iFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="450" y="139"/>
+            <point key="canvasLocation" x="514" y="114"/>
+        </scene>
+        <!--Validation-->
+        <scene sceneID="rVv-sv-fko">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Validation" id="nlV-jt-zdX" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gCf-KQ-IGS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="534" y="163"/>
         </scene>
     </scenes>
 </document>
