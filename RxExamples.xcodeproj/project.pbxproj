@@ -130,7 +130,7 @@
 				F5E8DB7820A5281100602E84 /* Assets */,
 				F593888F20A5357400EF362B /* Extensions */,
 				F5E8DB7B20A528B200602E84 /* Views */,
-				F5E8DB7920A528B100602E84 /* View Models */,
+				F5E8DB7920A528B100602E84 /* Protocols */,
 				F53327C320A5266B00CEF64F /* AppDelegate.swift */,
 			);
 			path = RxExamples;
@@ -165,12 +165,12 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		F5E8DB7920A528B100602E84 /* View Models */ = {
+		F5E8DB7920A528B100602E84 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				F5E8DB7A20A528B100602E84 /* ViewModelType.swift */,
 			);
-			path = "View Models";
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		F5E8DB7B20A528B200602E84 /* Views */ = {

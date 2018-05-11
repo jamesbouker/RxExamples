@@ -21,7 +21,7 @@ class ValidationViewController: UIViewController {
     var bag = DisposeBag()
     var viewModel = ValidationViewModel()
 
-    func bind() {
+    func bindViewModel() {
         let input = ValidationViewModel.Input(username: ui.usernameTextField.rx.text.orEmpty,
                                               password: ui.passwordTextField.rx.text.orEmpty)
         let output = viewModel.transform(input: input)
@@ -57,7 +57,7 @@ class ValidationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        bind()
+        bindViewModel()
     }
 
     // MARK: - Functions
