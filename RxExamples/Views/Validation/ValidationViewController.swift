@@ -28,13 +28,12 @@ class ValidationViewController: UIViewController {
 
         output.usernameOk.bind(to: ui.usernameLength.rx.isHidden).disposed(by: bag)
         output.bothOk.bind(to: ui.signupButton.rx.isEnabled).disposed(by: bag)
-		output.bothOk.map { $0 ? UIColor.black : UIColor.lightGray }
-			.bind(to: ui.signupButton.rx_backgroundColor).disposed(by: bag)
+        output.bothOk.map { $0 ? UIColor.black : UIColor.lightGray }
+            .bind(to: ui.signupButton.rx_backgroundColor).disposed(by: bag)
 
-        output.passOk.map { $0 }.bind(to: ui.passwordLength.rx.isHidden).disposed(by: bag)
-        output.passOk.map { $0 }.bind(to: ui.passwordContainsNumber.rx.isHidden).disposed(by: bag)
-        output.passOk.map { $0 }.bind(to: ui.passwordContainsUppercase.rx.isHidden).disposed(by: bag)
-        output.passOk.map { $0 }.bind(to: ui.passwordContainsLowercase.rx.isHidden).disposed(by: bag)
+        output.passOk.bind { [weak self] hidden in
+            self?.ui.passwordLabels.forEach { $0.isHidden = hidden }
+        }.disposed(by: bag)
 
         output.passLength.map { $0 ? UIColor.green : UIColor.red }
             .bind(to: ui.passwordLength.rx_textColor).disposed(by: bag)
@@ -63,7 +62,7 @@ class ValidationViewController: UIViewController {
     // MARK: - Functions
 
     func signup() {
-		// Just showing an alert...
+        // Just showing an alert...
         let alert = UIAlertController(title: "Signed Up", message: "Congratulations!", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default) { _ in
             alert.dismiss(animated: true, completion: nil)

@@ -19,4 +19,8 @@ class ValidationUI: NSObject {
     @IBOutlet var passwordContainsLowercase: UILabel!
 
     @IBOutlet var signupButton: UIButton!
+
+    var passwordLabels: [UILabel] {
+        return [passwordLength, passwordContainsNumber, passwordContainsLowercase, passwordContainsUppercase]
+    }
 }
