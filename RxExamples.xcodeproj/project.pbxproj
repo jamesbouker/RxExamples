@@ -10,11 +10,14 @@
 		997DEC9BFE6D3B059AC85C88 /* Pods_RxExamples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34AFA20E79C0E148422A7670 /* Pods_RxExamples.framework */; };
 		E373DE8DFB244190B63F7790 /* Pods_RxExamplesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F765ED90C1D151C985FEF4 /* Pods_RxExamplesTests.framework */; };
 		F53327C420A5266B00CEF64F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53327C320A5266B00CEF64F /* AppDelegate.swift */; };
-		F53327C620A5266B00CEF64F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53327C520A5266B00CEF64F /* ViewController.swift */; };
 		F53327C920A5266B00CEF64F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F53327C720A5266B00CEF64F /* Main.storyboard */; };
 		F53327CB20A5266C00CEF64F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F53327CA20A5266C00CEF64F /* Assets.xcassets */; };
 		F53327CE20A5266C00CEF64F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F53327CC20A5266C00CEF64F /* LaunchScreen.storyboard */; };
 		F53327D920A5266C00CEF64F /* RxExamplesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53327D820A5266C00CEF64F /* RxExamplesTests.swift */; };
+		F5E8DB8020A528B200602E84 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E8DB7A20A528B100602E84 /* ViewModelType.swift */; };
+		F5E8DB8120A528B200602E84 /* AdderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E8DB7D20A528B200602E84 /* AdderViewModel.swift */; };
+		F5E8DB8220A528B200602E84 /* AdderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E8DB7E20A528B200602E84 /* AdderViewController.swift */; };
+		F5E8DB8320A528B200602E84 /* Adder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E8DB7F20A528B200602E84 /* Adder.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,6 @@
 		F2B62AE331BB5932A31EFE89 /* Pods-RxExamplesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxExamplesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxExamplesTests/Pods-RxExamplesTests.release.xcconfig"; sourceTree = "<group>"; };
 		F53327C020A5266B00CEF64F /* RxExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F53327C320A5266B00CEF64F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F53327C520A5266B00CEF64F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F53327C820A5266B00CEF64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F53327CA20A5266C00CEF64F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F53327CD20A5266C00CEF64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -44,6 +46,10 @@
 		F53327D420A5266C00CEF64F /* RxExamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxExamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F53327D820A5266C00CEF64F /* RxExamplesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxExamplesTests.swift; sourceTree = "<group>"; };
 		F53327DA20A5266C00CEF64F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5E8DB7A20A528B100602E84 /* ViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		F5E8DB7D20A528B200602E84 /* AdderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdderViewModel.swift; sourceTree = "<group>"; };
+		F5E8DB7E20A528B200602E84 /* AdderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdderViewController.swift; sourceTree = "<group>"; };
+		F5E8DB7F20A528B200602E84 /* Adder.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Adder.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,12 +115,10 @@
 		F53327C220A5266B00CEF64F /* RxExamples */ = {
 			isa = PBXGroup;
 			children = (
+				F5E8DB7820A5281100602E84 /* Assets */,
+				F5E8DB7B20A528B200602E84 /* Views */,
+				F5E8DB7920A528B100602E84 /* View Models */,
 				F53327C320A5266B00CEF64F /* AppDelegate.swift */,
-				F53327C520A5266B00CEF64F /* ViewController.swift */,
-				F53327C720A5266B00CEF64F /* Main.storyboard */,
-				F53327CA20A5266C00CEF64F /* Assets.xcassets */,
-				F53327CC20A5266C00CEF64F /* LaunchScreen.storyboard */,
-				F53327CF20A5266C00CEF64F /* Info.plist */,
 			);
 			path = RxExamples;
 			sourceTree = "<group>";
@@ -126,6 +130,43 @@
 				F53327DA20A5266C00CEF64F /* Info.plist */,
 			);
 			path = RxExamplesTests;
+			sourceTree = "<group>";
+		};
+		F5E8DB7820A5281100602E84 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F53327C720A5266B00CEF64F /* Main.storyboard */,
+				F53327CA20A5266C00CEF64F /* Assets.xcassets */,
+				F53327CC20A5266C00CEF64F /* LaunchScreen.storyboard */,
+				F53327CF20A5266C00CEF64F /* Info.plist */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		F5E8DB7920A528B100602E84 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				F5E8DB7A20A528B100602E84 /* ViewModelType.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		F5E8DB7B20A528B200602E84 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F5E8DB7C20A528B200602E84 /* Adder View */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F5E8DB7C20A528B200602E84 /* Adder View */ = {
+			isa = PBXGroup;
+			children = (
+				F5E8DB7F20A528B200602E84 /* Adder.storyboard */,
+				F5E8DB7D20A528B200602E84 /* AdderViewModel.swift */,
+				F5E8DB7E20A528B200602E84 /* AdderViewController.swift */,
+			);
+			path = "Adder View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +259,7 @@
 				F53327CE20A5266C00CEF64F /* LaunchScreen.storyboard in Resources */,
 				F53327CB20A5266C00CEF64F /* Assets.xcassets in Resources */,
 				F53327C920A5266B00CEF64F /* Main.storyboard in Resources */,
+				F5E8DB8320A528B200602E84 /* Adder.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,8 +381,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F53327C620A5266B00CEF64F /* ViewController.swift in Sources */,
+				F5E8DB8020A528B200602E84 /* ViewModelType.swift in Sources */,
 				F53327C420A5266B00CEF64F /* AppDelegate.swift in Sources */,
+				F5E8DB8120A528B200602E84 /* AdderViewModel.swift in Sources */,
+				F5E8DB8220A528B200602E84 /* AdderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,7 +547,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6KM367XE7J;
-				INFOPLIST_FILE = RxExamples/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/RxExamples/Assets/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -523,7 +567,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6KM367XE7J;
-				INFOPLIST_FILE = RxExamples/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/RxExamples/Assets/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
