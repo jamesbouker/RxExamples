@@ -6,7 +6,7 @@
 //  Copyright © 2018 Jimmy Bouker. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import RxCocoa
 import RxSwift
 
@@ -17,10 +17,10 @@ class ValidationViewModel: ViewModelType {
     }
 
     struct Output {
-        var passLength: Observable<Bool>
-        var passNumber: Observable<Bool>
-        var passUpper: Observable<Bool>
-        var passLower: Observable<Bool>
+        var passLength: Observable<UIColor>
+        var passNumber: Observable<UIColor>
+        var passUpper: Observable<UIColor>
+        var passLower: Observable<UIColor>
         var passOk: Observable<Bool>
         var usernameOk: Observable<Bool>
         var bothOk: Observable<Bool>
@@ -40,12 +40,18 @@ class ValidationViewModel: ViewModelType {
         }
         let bothOk = Observable.combineLatest(usernameOk, passOk) { $0 && $1 }
 
-        return Output(passLength: passLength,
-                      passNumber: passNumber,
-                      passUpper: passUpper,
-                      passLower: passLower,
+        return Output(passLength: passLength.color,
+                      passNumber: passNumber.color,
+                      passUpper: passUpper.color,
+                      passLower: passLower.color,
                       passOk: passOk,
                       usernameOk: usernameOk,
                       bothOk: bothOk)
     }
+}
+
+private extension Observable where Element == Bool {
+	var color: Observable<UIColor>{
+		return map { $0 ? UIColor.green : UIColor.red }
+	}
 }

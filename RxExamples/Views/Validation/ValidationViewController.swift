@@ -28,24 +28,15 @@ class ValidationViewController: BaseViewController {
             self?.ui.passwordLabels.forEach { $0.isHidden = hidden }
         }.disposed(by: bag)
 
-        output.passLength.map { $0 ? UIColor.green : UIColor.red }
-            .bind(to: ui.passwordLength.rx_textColor).disposed(by: bag)
-
-        output.passNumber.map { $0 ? UIColor.green : UIColor.red }
-            .bind(to: ui.passwordContainsNumber.rx_textColor).disposed(by: bag)
-
-        output.passUpper.map { $0 ? UIColor.green : UIColor.red }
-            .bind(to: ui.passwordContainsUppercase.rx_textColor).disposed(by: bag)
-
-        output.passLower.map { $0 ? UIColor.green : UIColor.red }
-            .bind(to: ui.passwordContainsLowercase.rx_textColor).disposed(by: bag)
+        output.passLength.bind(to: ui.passwordLength.rx_textColor).disposed(by: bag)
+        output.passNumber.bind(to: ui.passwordContainsNumber.rx_textColor).disposed(by: bag)
+        output.passUpper.bind(to: ui.passwordContainsUppercase.rx_textColor).disposed(by: bag)
+        output.passLower.bind(to: ui.passwordContainsLowercase.rx_textColor).disposed(by: bag)
 
         ui.signupButton.rx.tap.subscribe(onNext: { [weak self] in
             self?.signup()
         }).disposed(by: bag)
     }
-
-    // MARK: - Functions
 
     func signup() {
         // Just showing an alert...
