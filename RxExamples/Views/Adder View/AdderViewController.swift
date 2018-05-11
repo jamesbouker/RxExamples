@@ -10,7 +10,7 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-class AdderViewController: UIViewController {
+class AdderViewController: BaseViewController {
 
     // MARK: - Outlets
 
@@ -34,19 +34,11 @@ class AdderViewController: UIViewController {
     }
 
     var viewModel = AdderViewModel()
-    var bag = DisposeBag()
 
-    func bindViewModel() {
+	override func bindViewModel() {
         let input = AdderViewModel.Input(numbers: fieldObservers)
         let output = viewModel.transform(input: input)
         output.solution.bind(to: solutionBinder).disposed(by: bag)
-    }
-
-    // MARK: - Lifecycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        bindViewModel()
     }
 
     // MARK: - Event Listeners

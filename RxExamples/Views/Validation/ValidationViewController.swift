@@ -10,7 +10,7 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-class ValidationViewController: UIViewController {
+class ValidationViewController: BaseViewController {
 
     // MARK: - Outlets
 
@@ -18,10 +18,9 @@ class ValidationViewController: UIViewController {
 
     // MARK: - Rx
 
-    var bag = DisposeBag()
     var viewModel = ValidationViewModel()
 
-    func bindViewModel() {
+	override func bindViewModel() {
         let input = ValidationViewModel.Input(username: ui.usernameTextField.rx.text.orEmpty,
                                               password: ui.passwordTextField.rx.text.orEmpty)
         let output = viewModel.transform(input: input)
@@ -50,13 +49,6 @@ class ValidationViewController: UIViewController {
         ui.signupButton.rx.tap.subscribe(onNext: { [weak self] in
             self?.signup()
         }).disposed(by: bag)
-    }
-
-    // MARK: - Lifecycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        bindViewModel()
     }
 
     // MARK: - Functions
