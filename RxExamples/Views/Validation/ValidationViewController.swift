@@ -11,16 +11,10 @@ import RxSwift
 import UIKit
 
 class ValidationViewController: BaseViewController {
-
-    // MARK: - Outlets
-
     @IBOutlet var ui: ValidationUI!
-
-    // MARK: - Rx
-
     var viewModel = ValidationViewModel()
 
-	override func bindViewModel() {
+    override func bindViewModel() {
         let input = ValidationViewModel.Input(username: ui.usernameTextField.rx.text.orEmpty,
                                               password: ui.passwordTextField.rx.text.orEmpty)
         let output = viewModel.transform(input: input)

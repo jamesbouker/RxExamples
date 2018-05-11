@@ -6,17 +6,55 @@
 //  Copyright © 2018 Jimmy Bouker. All rights reserved.
 //
 
-import UIKit
 import RxSwift
+import UIKit
 
 class BaseViewController: UIViewController {
+    @IBOutlet var fields: [UITextField]!
 
-	var bag = DisposeBag()
+    @IBInspectable var tapScreenToHideKeyboard: Bool = false
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		bindViewModel()
-	}
+    var bag = DisposeBag()
 
-	func bindViewModel() { }
+    func bindViewModel() {}
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        bindViewModel()
+
+        if tapScreenToHideKeyboard {
+            let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+            view.addGestureRecognizer(tap)
+        }
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: .UIKeyboardWillShow, object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: .UIKeyboardWillHide, object: nil)
+    }
+
+    // MARK: - Keyboard Magic
+
+    @objc func keyboardWillShow(sender: NSNotification) {
+        guard
+            let textfield = fields.first(where: { $0.isFirstResponder }),
+            let frame = (sender.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+
+        let rect = textfield.convert(textfield.bounds, to: view)
+        let deltaY = rect.maxY - frame.minY + 20
+        if deltaY > 0 {
+            view.frame.origin.y = -deltaY
+        } else {
+            view.frame.origin.y = 0
+        }
+    }
+
+    @objc func keyboardWillHide(sender _: NSNotification) {
+        view.frame.origin.y = 0
+    }
+
+    @IBAction func hideKeyboard() {
+        fields.forEach { $0.resignFirstResponder() }
+    }
 }

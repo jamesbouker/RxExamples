@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -9,41 +13,41 @@
         <!--Adder-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Adder" id="BYZ-38-t0r" customClass="AdderViewController" customModule="Adder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Adder" id="BYZ-38-t0r" customClass="AdderViewController" customModule="RxExamples" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="TnA-ho-foJ">
-                                <rect key="frame" x="40" y="265.5" width="295" height="136.5"/>
+                                <rect key="frame" x="40" y="92" width="488" height="136.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ton-ue-V4V">
-                                        <rect key="frame" x="0.0" y="0.0" width="295" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="488" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6eR-iF-43D">
-                                        <rect key="frame" x="0.0" y="36" width="295" height="30"/>
+                                        <rect key="frame" x="0.0" y="36" width="488" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="3" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="czA-K8-XWN">
-                                        <rect key="frame" x="0.0" y="72" width="295" height="30"/>
+                                        <rect key="frame" x="0.0" y="72" width="488" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCi-bt-dxe" userLabel="Line">
-                                        <rect key="frame" x="0.0" y="108" width="295" height="2"/>
+                                        <rect key="frame" x="0.0" y="108" width="488" height="2"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="bIx-Jh-p38"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="284-gy-Wom">
-                                        <rect key="frame" x="0.0" y="116" width="295" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="116" width="488" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -60,23 +64,26 @@
                             <constraint firstItem="TnA-ho-foJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="zj3-mP-Tvk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="bxk-pr-sCE" appends="YES" id="eaH-O8-gpt"/>
-                        </connections>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="tapScreenToHideKeyboard" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
-                        <outlet property="number1" destination="ton-ue-V4V" id="pu5-Yu-pAU"/>
-                        <outlet property="number2" destination="6eR-iF-43D" id="6oD-N4-A11"/>
-                        <outlet property="number3" destination="czA-K8-XWN" id="eMz-MT-lzJ"/>
-                        <outlet property="solution" destination="284-gy-Wom" id="PDR-uu-jJb"/>
+                        <outlet property="ui" destination="aFT-WS-LKW" id="Unz-g9-gnw"/>
+                        <outletCollection property="fields" destination="ton-ue-V4V" collectionClass="NSMutableArray" id="V8g-5o-4jD"/>
+                        <outletCollection property="fields" destination="6eR-iF-43D" collectionClass="NSMutableArray" id="4g7-1j-pWF"/>
+                        <outletCollection property="fields" destination="czA-K8-XWN" collectionClass="NSMutableArray" id="UbY-SM-PBn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="bxk-pr-sCE">
+                <customObject id="aFT-WS-LKW" customClass="AdderUI" customModule="RxExamples" customModuleProvider="target">
                     <connections>
-                        <action selector="hideKeyboard" destination="BYZ-38-t0r" id="klP-D3-xTT"/>
+                        <outlet property="number1" destination="ton-ue-V4V" id="TgY-yV-RiG"/>
+                        <outlet property="number2" destination="6eR-iF-43D" id="Oo1-jq-C2p"/>
+                        <outlet property="number3" destination="czA-K8-XWN" id="dgm-Te-iTj"/>
+                        <outlet property="solution" destination="284-gy-Wom" id="U8q-bS-50i"/>
                     </connections>
-                </tapGestureRecognizer>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1079.2" y="132.68365817091455"/>
         </scene>

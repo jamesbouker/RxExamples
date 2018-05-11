@@ -23,4 +23,8 @@ class ValidationUI: NSObject {
     var passwordLabels: [UILabel] {
         return [passwordLength, passwordContainsNumber, passwordContainsLowercase, passwordContainsUppercase]
     }
+
+    var fields: [UITextField] {
+        return [usernameTextField, passwordTextField]
+    }
 }

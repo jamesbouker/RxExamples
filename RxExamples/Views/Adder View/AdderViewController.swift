@@ -11,39 +11,12 @@ import RxSwift
 import UIKit
 
 class AdderViewController: BaseViewController {
-
-    // MARK: - Outlets
-
-    @IBOutlet var number1: UITextField!
-    @IBOutlet var number2: UITextField!
-    @IBOutlet var number3: UITextField!
-    @IBOutlet var solution: UILabel!
-
-    // MARK: - Rx
-
-    var fields: [UITextField] {
-        return [number1, number2, number3]
-    }
-
-    var fieldObservers: [ControlProperty<String>] {
-        return fields.map { $0.rx.text.orEmpty }
-    }
-
-    var solutionBinder: Binder<String?> {
-        return solution.rx.text
-    }
-
+    @IBOutlet var ui: AdderUI!
     var viewModel = AdderViewModel()
 
-	override func bindViewModel() {
-        let input = AdderViewModel.Input(numbers: fieldObservers)
+    override func bindViewModel() {
+        let input = AdderViewModel.Input(numbers: fields.map { $0.rx.text.orEmpty })
         let output = viewModel.transform(input: input)
-        output.solution.bind(to: solutionBinder).disposed(by: bag)
-    }
-
-    // MARK: - Event Listeners
-
-    @IBAction func hideKeyboard() {
-        fields.forEach { $0.resignFirstResponder() }
+        output.solution.bind(to: ui.solution.rx.text).disposed(by: bag)
     }
 }

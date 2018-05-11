@@ -19,6 +19,7 @@
 		F593889620A545DB00EF362B /* ValidationUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593889520A545DB00EF362B /* ValidationUI.swift */; };
 		F593889820A5481A00EF362B /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593889720A5481A00EF362B /* UIButton+Extensions.swift */; };
 		F593889A20A54BB800EF362B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593889920A54BB800EF362B /* BaseViewController.swift */; };
+		F593889D20A54CC100EF362B /* AdderUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593889C20A54CC100EF362B /* AdderUI.swift */; };
 		F5E8DB8020A528B200602E84 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E8DB7A20A528B100602E84 /* ViewModelType.swift */; };
 		F5E8DB8120A528B200602E84 /* AdderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E8DB7D20A528B200602E84 /* AdderViewModel.swift */; };
 		F5E8DB8220A528B200602E84 /* AdderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E8DB7E20A528B200602E84 /* AdderViewController.swift */; };
@@ -58,6 +59,7 @@
 		F593889520A545DB00EF362B /* ValidationUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationUI.swift; sourceTree = "<group>"; };
 		F593889720A5481A00EF362B /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		F593889920A54BB800EF362B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F593889C20A54CC100EF362B /* AdderUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdderUI.swift; sourceTree = "<group>"; };
 		F5E8DB7A20A528B100602E84 /* ViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		F5E8DB7D20A528B200602E84 /* AdderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdderViewModel.swift; sourceTree = "<group>"; };
 		F5E8DB7E20A528B200602E84 /* AdderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdderViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				F5E8DB7F20A528B200602E84 /* Adder.storyboard */,
 				F5E8DB7D20A528B200602E84 /* AdderViewModel.swift */,
 				F5E8DB7E20A528B200602E84 /* AdderViewController.swift */,
+				F593889C20A54CC100EF362B /* AdderUI.swift */,
 			);
 			path = "Adder View";
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				F5E8DB8120A528B200602E84 /* AdderViewModel.swift in Sources */,
 				F5E8DB8220A528B200602E84 /* AdderViewController.swift in Sources */,
 				F593889620A545DB00EF362B /* ValidationUI.swift in Sources */,
+				F593889D20A54CC100EF362B /* AdderUI.swift in Sources */,
 				F5E8DB8920A52BD400602E84 /* ValidationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -598,7 +602,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6KM367XE7J;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/RxExamples/Assets/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -618,7 +622,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6KM367XE7J;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/RxExamples/Assets/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
