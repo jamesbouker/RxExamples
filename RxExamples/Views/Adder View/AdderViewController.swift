@@ -6,48 +6,52 @@
 //  Copyright © 2018 Jimmy Bouker. All rights reserved.
 //
 
-import UIKit
-import RxSwift
 import RxCocoa
+import RxSwift
+import UIKit
 
 class AdderViewController: UIViewController {
 
-	// MARK: - Outlets
-	@IBOutlet weak var number1: UITextField!
-	@IBOutlet weak var number2: UITextField!
-	@IBOutlet weak var number3: UITextField!
-	@IBOutlet weak var solution: UILabel!
+    // MARK: - Outlets
 
-	// MARK: - Rx
-	var fields: [UITextField] {
-		return [number1, number2, number3]
-	}
+    @IBOutlet var number1: UITextField!
+    @IBOutlet var number2: UITextField!
+    @IBOutlet var number3: UITextField!
+    @IBOutlet var solution: UILabel!
 
-	var fieldObservers: [ControlProperty<String>] {
-		return fields.map { $0.rx.text.orEmpty }
-	}
+    // MARK: - Rx
 
-	var solutionBinder: Binder<String?> {
-		return solution.rx.text
-	}
+    var fields: [UITextField] {
+        return [number1, number2, number3]
+    }
 
-	var viewModel = AdderViewModel()
-	var bag = DisposeBag()
+    var fieldObservers: [ControlProperty<String>] {
+        return fields.map { $0.rx.text.orEmpty }
+    }
 
-	func bindViewModel() {
-		let input = AdderViewModel.Input(numbers: fieldObservers)
-		let output = viewModel.transform(input: input)
-		output.solution.bind(to: solutionBinder).disposed(by: bag)
-	}
+    var solutionBinder: Binder<String?> {
+        return solution.rx.text
+    }
 
-	// MARK: - Lifecycle
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		bindViewModel()
-	}
+    var viewModel = AdderViewModel()
+    var bag = DisposeBag()
 
-	// MARK: - Event Listeners
-	@IBAction func hideKeyboard() {
-		fields.forEach { $0.resignFirstResponder() }
-	}
+    func bindViewModel() {
+        let input = AdderViewModel.Input(numbers: fieldObservers)
+        let output = viewModel.transform(input: input)
+        output.solution.bind(to: solutionBinder).disposed(by: bag)
+    }
+
+    // MARK: - Lifecycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        bindViewModel()
+    }
+
+    // MARK: - Event Listeners
+
+    @IBAction func hideKeyboard() {
+        fields.forEach { $0.resignFirstResponder() }
+    }
 }

@@ -7,23 +7,23 @@
 //
 
 import Foundation
-import RxSwift
 import RxCocoa
+import RxSwift
 
 class AdderViewModel: ViewModelType {
-	struct Input {
-		var numbers: [ControlProperty<String>]
-	}
+    struct Input {
+        var numbers: [ControlProperty<String>]
+    }
 
-	struct Output {
-		var solution: Observable<String>
-	}
+    struct Output {
+        var solution: Observable<String>
+    }
 
-	func transform(input: Input) -> Output {
-		let solution = Observable.combineLatest(input.numbers) { latest in
-			latest.reduce(0) { $0 + (Int($1) ?? 0) }
-		}
-		.map { String($0) }
-		return Output(solution: solution)
-	}
+    func transform(input: Input) -> Output {
+        let solution = Observable.combineLatest(input.numbers) { latest in
+            latest.reduce(0) { $0 + (Int($1) ?? 0) }
+        }
+        .map { String($0) }
+        return Output(solution: solution)
+    }
 }
