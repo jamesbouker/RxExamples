@@ -11,8 +11,7 @@ import RxFeedback
 import RxSwift
 
 class CounterViewModel: ViewModelType {
-    var text = BehaviorRelay<String>(value: "")
-    var bag = DisposeBag()
+	var bag = DisposeBag()
 
     struct Input {
         var plus: ControlEvent<Void>
@@ -24,11 +23,15 @@ class CounterViewModel: ViewModelType {
     }
 
     func transform(input: Input) -> Output {
+
+		let text = BehaviorRelay<String>(value: "")
+		let out = Output(value: text.asObservable())
+
         Observable.system(0,
             reduce: counterReducer,
             scheduledFeedback: bind(self) { this, state -> Bindings<CounterEvent> in
                 let subs = [
-                    state.map { String($0) }.bind(to: this.text)
+                    state.map { String($0) }.bind(to: text)
                 ]
                 let events = [
                     input.plus.map { CounterEvent.increment },
@@ -37,6 +40,6 @@ class CounterViewModel: ViewModelType {
                 return Bindings(subscriptions: subs, events: events)
         }).subscribe().disposed(by: bag)
 
-        return Output(value: text.asObservable())
+        return out
     }
 }
