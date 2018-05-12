@@ -25,6 +25,7 @@
 		F5A3C6E720A67D60001C9AA9 /* CounterUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A3C6E620A67D60001C9AA9 /* CounterUI.swift */; };
 		F5A3C6E920A67E06001C9AA9 /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A3C6E820A67E06001C9AA9 /* CounterViewModel.swift */; };
 		F5A3C6ED20A682F3001C9AA9 /* CounterFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A3C6EC20A682F2001C9AA9 /* CounterFeedback.swift */; };
+		F5A3C6EF20A68F65001C9AA9 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A3C6EE20A68F65001C9AA9 /* Observable+Extensions.swift */; };
 		F5E8DB8020A528B200602E84 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E8DB7A20A528B100602E84 /* ViewModelType.swift */; };
 		F5E8DB8120A528B200602E84 /* AdderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E8DB7D20A528B200602E84 /* AdderViewModel.swift */; };
 		F5E8DB8220A528B200602E84 /* AdderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E8DB7E20A528B200602E84 /* AdderViewController.swift */; };
@@ -70,6 +71,7 @@
 		F5A3C6E620A67D60001C9AA9 /* CounterUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterUI.swift; sourceTree = "<group>"; };
 		F5A3C6E820A67E06001C9AA9 /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
 		F5A3C6EC20A682F2001C9AA9 /* CounterFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterFeedback.swift; sourceTree = "<group>"; };
+		F5A3C6EE20A68F65001C9AA9 /* Observable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Observable+Extensions.swift"; path = "/Users/jamesbouker/Documents/RxSwift_My_Examples/RxExamples/Extensions/Observable+Extensions.swift"; sourceTree = "<absolute>"; };
 		F5E8DB7A20A528B100602E84 /* ViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		F5E8DB7D20A528B200602E84 /* AdderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdderViewModel.swift; sourceTree = "<group>"; };
 		F5E8DB7E20A528B200602E84 /* AdderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdderViewController.swift; sourceTree = "<group>"; };
@@ -162,8 +164,9 @@
 		F593888F20A5357400EF362B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F593889020A5358700EF362B /* UILabel+Extensions.swift */,
+				F5A3C6EE20A68F65001C9AA9 /* Observable+Extensions.swift */,
 				F593889720A5481A00EF362B /* UIButton+Extensions.swift */,
+				F593889020A5358700EF362B /* UILabel+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5A3C6EF20A68F65001C9AA9 /* Observable+Extensions.swift in Sources */,
 				F593889120A5358700EF362B /* UILabel+Extensions.swift in Sources */,
 				F593889320A5390B00EF362B /* ValidationViewModel.swift in Sources */,
 				F5E8DB8020A528B200602E84 /* ViewModelType.swift in Sources */,

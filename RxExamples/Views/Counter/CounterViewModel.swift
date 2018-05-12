@@ -24,10 +24,8 @@ class CounterViewModel: ViewModelType {
     }
 
     func transform(input: Input) -> Output {
-        Observable.system(
-            initialState: 0,
+        Observable.system(0,
             reduce: counterReducer,
-            scheduler: MainScheduler.instance,
             scheduledFeedback: bind(self) { this, state -> Bindings<CounterEvent> in
                 let subs = [
                     state.map { String($0) }.bind(to: this.text)
