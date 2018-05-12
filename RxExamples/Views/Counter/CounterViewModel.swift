@@ -9,7 +9,6 @@
 import RxCocoa
 import RxFeedback
 import RxSwift
-import UIKit
 
 class CounterViewModel: ViewModelType {
     var text = BehaviorRelay<String>(value: "")

@@ -7,10 +7,6 @@
 //
 
 import Foundation
-import RxCocoa
-import RxFeedback
-import RxSwift
-import UIKit
 
 typealias CounterState = Int
 
