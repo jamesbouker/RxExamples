@@ -30,11 +30,11 @@ class CounterViewModel: ViewModelType {
             scheduler: MainScheduler.instance,
             scheduledFeedback: bind(self) { this, state -> Bindings<CounterEvent> in
                 let subs = [
-                    state.map { String($0) }.bind(to: this.text),
+                    state.map { String($0) }.bind(to: this.text)
                 ]
                 let events = [
                     input.plus.map { CounterEvent.increment },
-                    input.minus.map { CounterEvent.decrement },
+                    input.minus.map { CounterEvent.decrement }
                 ]
                 return Bindings(subscriptions: subs, events: events)
         }).subscribe().disposed(by: bag)

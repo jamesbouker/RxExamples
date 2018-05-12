@@ -212,13 +212,13 @@
 			children = (
 				F593889B20A54BBF00EF362B /* Base */,
 				F5A3C6E020A66889001C9AA9 /* Counter */,
-				F5E8DB7C20A528B200602E84 /* Adder View */,
+				F5E8DB7C20A528B200602E84 /* Adder */,
 				F5E8DB8520A529F400602E84 /* Validation */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		F5E8DB7C20A528B200602E84 /* Adder View */ = {
+		F5E8DB7C20A528B200602E84 /* Adder */ = {
 			isa = PBXGroup;
 			children = (
 				F5E8DB7F20A528B200602E84 /* Adder.storyboard */,
@@ -226,7 +226,7 @@
 				F5E8DB7E20A528B200602E84 /* AdderViewController.swift */,
 				F593889C20A54CC100EF362B /* AdderUI.swift */,
 			);
-			path = "Adder View";
+			path = Adder;
 			sourceTree = "<group>";
 		};
 		F5E8DB8520A529F400602E84 /* Validation */ = {
