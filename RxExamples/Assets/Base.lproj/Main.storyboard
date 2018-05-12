@@ -80,6 +80,30 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="RxFeedback Examples" id="5gw-fc-esA">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="IWk-i4-ZnS" style="IBUITableViewCellStyleDefault" id="kDM-e7-TFR">
+                                        <rect key="frame" x="0.0" y="144" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kDM-e7-TFR" id="JKi-cO-lQA">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Counter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IWk-i4-ZnS">
+                                                    <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="8ks-az-lci" kind="show" id="wET-64-Kt3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="hux-2x-T3b" id="EUJ-Hw-1C4"/>
@@ -98,7 +122,7 @@
                 <viewControllerPlaceholder storyboardName="Adder" id="ukJ-pu-lK7" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6uH-yk-iFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="514" y="114"/>
+            <point key="canvasLocation" x="543" y="-2"/>
         </scene>
         <!--Validation-->
         <scene sceneID="rVv-sv-fko">
@@ -106,7 +130,15 @@
                 <viewControllerPlaceholder storyboardName="Validation" id="nlV-jt-zdX" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCf-KQ-IGS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="534" y="163"/>
+            <point key="canvasLocation" x="562" y="41"/>
+        </scene>
+        <!--Counter-->
+        <scene sceneID="h05-TW-trh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Counter" id="8ks-az-lci" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F3g-Kg-sAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="553" y="92"/>
         </scene>
     </scenes>
 </document>

@@ -6,9 +6,9 @@
 //  Copyright © 2018 Jimmy Bouker. All rights reserved.
 //
 
-import UIKit
 import RxCocoa
 import RxSwift
+import UIKit
 
 class ValidationViewModel: ViewModelType {
     struct Input {
@@ -51,7 +51,7 @@ class ValidationViewModel: ViewModelType {
 }
 
 private extension Observable where Element == Bool {
-	var color: Observable<UIColor>{
-		return map { $0 ? UIColor.green : UIColor.red }
-	}
+    var color: Observable<UIColor> {
+        return map { $0 ? UIColor.green : UIColor.red }
+    }
 }

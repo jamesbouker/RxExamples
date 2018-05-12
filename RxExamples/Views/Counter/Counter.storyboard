@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TQN-p5-S5v">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Counter View Controller-->
+        <scene sceneID="did-N2-ayF">
+            <objects>
+                <viewController id="TQN-p5-S5v" customClass="CounterViewController" customModule="RxExamples" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fwe-zf-6CR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ode-Pz-uVI">
+                                <rect key="frame" x="113.5" y="293.5" width="148" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hr8-g1-DfG">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="E7B-sk-m0n"/>
+                                            <constraint firstAttribute="width" constant="44" id="I4H-HO-mPf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <state key="normal" title="-"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ep-xx-b78">
+                                        <rect key="frame" x="64" y="0.0" width="20" height="80"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nqo-LJ-t6j">
+                                        <rect key="frame" x="104" y="0.0" width="44" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="esl-R7-8aw"/>
+                                            <constraint firstAttribute="width" constant="44" id="i44-YU-pY1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <state key="normal" title="+"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ode-Pz-uVI" firstAttribute="centerX" secondItem="Fwe-zf-6CR" secondAttribute="centerX" id="XXZ-7i-mfu"/>
+                            <constraint firstItem="Ode-Pz-uVI" firstAttribute="centerY" secondItem="Fwe-zf-6CR" secondAttribute="centerY" id="pa6-4l-dav"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gac-mj-gJE"/>
+                    </view>
+                    <connections>
+                        <outlet property="ui" destination="ytJ-DW-yn2" id="4vF-hV-mcY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qV0-Pd-Mtb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="ytJ-DW-yn2" customClass="CounterUI" customModule="RxExamples" customModuleProvider="target">
+                    <connections>
+                        <outlet property="label" destination="2Ep-xx-b78" id="f2P-qh-L7L"/>
+                        <outlet property="minus" destination="Hr8-g1-DfG" id="ebO-7O-jJ9"/>
+                        <outlet property="plus" destination="Nqo-LJ-t6j" id="mfl-tC-CKw"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="174" y="159"/>
+        </scene>
+    </scenes>
+</document>

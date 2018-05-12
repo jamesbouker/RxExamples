@@ -11,11 +11,9 @@ import UIKit
 
 class BaseViewController: UIViewController {
     @IBOutlet var fields: [UITextField]!
-
     @IBInspectable var tapScreenToHideKeyboard: Bool = false
 
     var bag = DisposeBag()
-
     func bindViewModel() {}
 
     override func viewDidLoad() {
@@ -30,6 +28,10 @@ class BaseViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: .UIKeyboardWillShow, object: nil)
 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: .UIKeyboardWillHide, object: nil)
+    }
+
+    deinit {
+        print("Dealloc: \(self)")
     }
 
     // MARK: - Keyboard Magic
