@@ -17,15 +17,17 @@ class SimpleTableViewController: BaseViewController {
     var viewModel = SimpleTableViewModel()
 
     override func bindViewModel() {
-        let output = viewModel.transform(input: .init())
+		let input = SimpleTableViewModel.Input(itemSelected: tableView.rx.itemSelected,
+											   accessorySelected: tableView.rx.itemAccessoryButtonTapped)
+        let output = viewModel.transform(input: input)
+
         output.items.bind(to: tableView.rx.items(cellIdentifier: cellId, cellType: UITableViewCell.self)) { row, element, cell in
             cell.textLabel?.text = "\(element) @ row \(row)"
         }.disposed(by: bag)
 
-        Observable.of(tableView.rx.itemSelected, tableView.rx.itemAccessoryButtonTapped).merge()
-            .subscribe(onNext: { [weak self] in
-                self?.tableView.deselectRow(at: $0, animated: true)
-                self?.alert("Selected Cell", message: "\($0.item)")
-            }).disposed(by: bag)
+		output.tapped.subscribe(onNext: { [weak self] in
+			self?.tableView.deselectRow(at: $0.0, animated: true)
+			self?.alert("Selected Cell", message: "\($0.1)")
+		}).disposed(by: bag)
     }
 }
