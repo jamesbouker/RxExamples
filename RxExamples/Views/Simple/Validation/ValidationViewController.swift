@@ -34,16 +34,7 @@ class ValidationViewController: BaseViewController {
         output.passLower.bind(to: ui.passwordContainsLowercase.rx_textColor).disposed(by: bag)
 
         ui.signupButton.rx.tap.subscribe(onNext: { [weak self] in
-            self?.signup()
+            self?.alert("Signed Up", message: "Congratulations!")
         }).disposed(by: bag)
-    }
-
-    func signup() {
-        // Just showing an alert...
-        let alert = UIAlertController(title: "Signed Up", message: "Congratulations!", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default) { _ in
-            alert.dismiss(animated: true, completion: nil)
-        })
-        present(alert, animated: true, completion: nil)
     }
 }

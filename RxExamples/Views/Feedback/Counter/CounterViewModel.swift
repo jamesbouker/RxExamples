@@ -26,19 +26,14 @@ class CounterViewModel: ViewModelType {
         let text = BehaviorRelay<String>(value: "")
         let out = Output(value: text.asObservable())
 
-        Observable.system(0,
-			reduce: counterReducer,
-			scheduledFeedback: bind(self) { _, state -> Bindings<CounterEvent> in
-			  let subs = [
-				  state.map { String($0) }.bind(to: text),
-			  ]
-			  let events = [
-				  input.plus.map { CounterEvent.increment },
-				  input.minus.map { CounterEvent.decrement },
-			  ]
-			  return Bindings(subscriptions: subs, events: events)
-		}).subscribe().disposed(by: bag)
-
+        Observable.system(0, reduce: counterReducer, feedback: bind(self) { _, state -> Bindings<CounterEvent> in
+			Bindings(subscriptions: [
+				state.map { String($0) }.bind(to: text),
+			], events: [
+				input.plus.map { CounterEvent.increment },
+				input.minus.map { CounterEvent.decrement },
+			])
+        }).subscribe().disposed(by: bag)
         return out
     }
 }

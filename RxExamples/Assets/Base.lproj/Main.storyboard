@@ -104,6 +104,30 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Table View Examples" id="jRG-zv-azz">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="d2y-LE-bGn" style="IBUITableViewCellStyleDefault" id="J9l-qv-0ab">
+                                        <rect key="frame" x="0.0" y="216" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J9l-qv-0ab" id="6Am-fm-Lij">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Simple Table" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d2y-LE-bGn">
+                                                    <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="PuL-UZ-0Jg" kind="show" id="XJg-R8-py6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="hux-2x-T3b" id="EUJ-Hw-1C4"/>
@@ -122,7 +146,7 @@
                 <viewControllerPlaceholder storyboardName="Adder" id="ukJ-pu-lK7" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6uH-yk-iFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="543" y="-2"/>
+            <point key="canvasLocation" x="540" y="68"/>
         </scene>
         <!--Validation-->
         <scene sceneID="rVv-sv-fko">
@@ -130,7 +154,7 @@
                 <viewControllerPlaceholder storyboardName="Validation" id="nlV-jt-zdX" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCf-KQ-IGS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="562" y="41"/>
+            <point key="canvasLocation" x="559" y="112"/>
         </scene>
         <!--Counter-->
         <scene sceneID="h05-TW-trh">
@@ -138,7 +162,15 @@
                 <viewControllerPlaceholder storyboardName="Counter" id="8ks-az-lci" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F3g-Kg-sAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="553" y="92"/>
+            <point key="canvasLocation" x="551" y="163"/>
+        </scene>
+        <!--SimpleTable-->
+        <scene sceneID="uov-7g-7pQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SimpleTable" id="PuL-UZ-0Jg" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gYS-sH-tu7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="570" y="210"/>
         </scene>
     </scenes>
 </document>

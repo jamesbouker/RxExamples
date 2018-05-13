@@ -34,6 +34,17 @@ class BaseViewController: UIViewController {
         print("Dealloc: \(self)")
     }
 
+    // MARK: - Alert
+
+    func alert(_ title: String, message: String, completion: (() -> Void)? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default) { _ in
+            completion?()
+            alert.dismiss(animated: true, completion: nil)
+        })
+        present(alert, animated: true, completion: nil)
+    }
+
     // MARK: - Keyboard Magic
 
     @objc func keyboardWillShow(sender: NSNotification) {
