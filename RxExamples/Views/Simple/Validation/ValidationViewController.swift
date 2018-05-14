@@ -15,12 +15,11 @@ class ValidationViewController: BaseViewController {
     var viewModel = ValidationViewModel()
 
     override func bindViewModel() {
-        let input = ValidationViewModel.Input(username: ui.usernameTextField.rx.text.orEmpty,
-                                              password: ui.passwordTextField.rx.text.orEmpty)
+        let input = ValidationViewModel.Input(username: ui.usernameTextField.rx.text.orEmpty.asObservable(),
+                                              password: ui.passwordTextField.rx.text.orEmpty.asObservable())
         let output = viewModel.transform(input: input)
-
         output.usernameOk.bind(to: ui.usernameLength.rx.isHidden).disposed(by: bag)
-        output.bothOk.bind(to: ui.signupButton.rx.isEnabled).disposed(by: bag)
+		output.bothOk.bind(to: ui.signupButton.rx.isEnabled).disposed(by: bag)
         output.bothOk.map { $0 ? UIColor.black : UIColor.lightGray }
             .bind(to: ui.signupButton.rx_backgroundColor).disposed(by: bag)
 

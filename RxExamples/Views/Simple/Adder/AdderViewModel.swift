@@ -12,7 +12,7 @@ import RxSwift
 
 class AdderViewModel: ViewModelType {
     struct Input {
-        var numbers: [ControlProperty<String>]
+        var numbers: [Observable<String>]
     }
 
     struct Output {

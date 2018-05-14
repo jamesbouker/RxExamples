@@ -21,8 +21,8 @@ class SimpleTableViewController: BaseViewController {
 											   accessorySelected: tableView.rx.itemAccessoryButtonTapped)
         let output = viewModel.transform(input: input)
 
-        output.items.bind(to: tableView.rx.items(cellIdentifier: cellId, cellType: UITableViewCell.self)) { row, element, cell in
-            cell.textLabel?.text = "\(element) @ row \(row)"
+        output.items.bind(to: tableView.rx.items(cellIdentifier: cellId, cellType: UITableViewCell.self)) {
+            $2.textLabel?.text = "\($1) @ row \($0)"
         }.disposed(by: bag)
 
 		output.tapped.subscribe(onNext: { [weak self] in

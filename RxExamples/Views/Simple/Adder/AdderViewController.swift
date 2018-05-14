@@ -15,7 +15,7 @@ class AdderViewController: BaseViewController {
     var viewModel = AdderViewModel()
 
     override func bindViewModel() {
-        let input = AdderViewModel.Input(numbers: fields.map { $0.rx.text.orEmpty })
+        let input = AdderViewModel.Input(numbers: fields.map { $0.rx.text.orEmpty.asObservable() })
         let output = viewModel.transform(input: input)
         output.solution.bind(to: ui.solution.rx.text).disposed(by: bag)
     }

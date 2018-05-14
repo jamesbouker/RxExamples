@@ -9,5 +9,7 @@ target 'RxExamples' do
 
   target 'RxExamplesTests' do
     inherit! :search_paths
+	pod 'RxBlocking', '~> 4.0'
+	pod 'RxTest',     '~> 4.0'
   end
 end

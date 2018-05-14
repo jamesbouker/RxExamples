@@ -12,8 +12,8 @@ import UIKit
 
 class ValidationViewModel: ViewModelType {
     struct Input {
-        var username: ControlProperty<String>
-        var password: ControlProperty<String>
+        var username: Observable<String>
+        var password: Observable<String>
     }
 
     struct Output {
@@ -29,17 +29,18 @@ class ValidationViewModel: ViewModelType {
     func transform(input: Input) -> Output {
         let usernameOk = input.username.map { $0.count > 5 }
 
+		func containsNum(_ str: String) -> Bool { return str.rangeOfCharacter(from: .decimalDigits) != nil }
+		func containsUpper(_ str: String) -> Bool { return str.rangeOfCharacter(from: .uppercaseLetters) != nil }
+		func containsLower(_ str: String) -> Bool { return str.rangeOfCharacter(from: .lowercaseLetters) != nil }
+
         let pass = input.password
         let passLength = pass.map { $0.count > 8 }
-        let passNumber = pass.map { $0.rangeOfCharacter(from: .decimalDigits) != nil }
-        let passUpper = pass.map { $0.rangeOfCharacter(from: .uppercaseLetters) != nil }
-        let passLower = pass.map { $0.rangeOfCharacter(from: .lowercaseLetters) != nil }
+        let passNumber = pass.map(containsNum)
+        let passUpper = pass.map(containsUpper)
+        let passLower = pass.map(containsLower)
 
-        let passOk = Observable.combineLatest([passLength, passNumber, passUpper, passLower]) {
-            $0.reduce(true) { $0 && $1 }
-        }
+        let passOk = pass.map { $0.count > 8 && containsNum($0) && containsUpper($0) && containsLower($0) }
         let bothOk = Observable.combineLatest(usernameOk, passOk) { $0 && $1 }
-
         return Output(passLength: passLength.color,
                       passNumber: passNumber.color,
                       passUpper: passUpper.color,

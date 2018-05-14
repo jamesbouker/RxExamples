@@ -13,7 +13,8 @@
 		F53327C920A5266B00CEF64F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F53327C720A5266B00CEF64F /* Main.storyboard */; };
 		F53327CB20A5266C00CEF64F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F53327CA20A5266C00CEF64F /* Assets.xcassets */; };
 		F53327CE20A5266C00CEF64F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F53327CC20A5266C00CEF64F /* LaunchScreen.storyboard */; };
-		F53327D920A5266C00CEF64F /* RxExamplesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53327D820A5266C00CEF64F /* RxExamplesTests.swift */; };
+		F53327D920A5266C00CEF64F /* AdderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53327D820A5266C00CEF64F /* AdderTests.swift */; };
+		F57E90A620AA22FA008FF025 /* ValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57E90A520AA22FA008FF025 /* ValidationTests.swift */; };
 		F593889120A5358700EF362B /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593889020A5358700EF362B /* UILabel+Extensions.swift */; };
 		F593889320A5390B00EF362B /* ValidationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593889220A5390B00EF362B /* ValidationViewModel.swift */; };
 		F593889620A545DB00EF362B /* ValidationUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593889520A545DB00EF362B /* ValidationUI.swift */; };
@@ -61,8 +62,9 @@
 		F53327CD20A5266C00CEF64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F53327CF20A5266C00CEF64F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F53327D420A5266C00CEF64F /* RxExamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxExamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F53327D820A5266C00CEF64F /* RxExamplesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxExamplesTests.swift; sourceTree = "<group>"; };
+		F53327D820A5266C00CEF64F /* AdderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdderTests.swift; sourceTree = "<group>"; };
 		F53327DA20A5266C00CEF64F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F57E90A520AA22FA008FF025 /* ValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTests.swift; sourceTree = "<group>"; };
 		F593889020A5358700EF362B /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		F593889220A5390B00EF362B /* ValidationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationViewModel.swift; sourceTree = "<group>"; };
 		F593889520A545DB00EF362B /* ValidationUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationUI.swift; sourceTree = "<group>"; };
@@ -161,8 +163,9 @@
 		F53327D720A5266C00CEF64F /* RxExamplesTests */ = {
 			isa = PBXGroup;
 			children = (
-				F53327D820A5266C00CEF64F /* RxExamplesTests.swift */,
+				F53327D820A5266C00CEF64F /* AdderTests.swift */,
 				F53327DA20A5266C00CEF64F /* Info.plist */,
+				F57E90A520AA22FA008FF025 /* ValidationTests.swift */,
 			);
 			path = RxExamplesTests;
 			sourceTree = "<group>";
@@ -389,9 +392,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RxExamplesTests/Pods-RxExamplesTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -518,7 +528,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F53327D920A5266C00CEF64F /* RxExamplesTests.swift in Sources */,
+				F57E90A620AA22FA008FF025 /* ValidationTests.swift in Sources */,
+				F53327D920A5266C00CEF64F /* AdderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
