@@ -14,6 +14,8 @@
 		F53327CB20A5266C00CEF64F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F53327CA20A5266C00CEF64F /* Assets.xcassets */; };
 		F53327CE20A5266C00CEF64F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F53327CC20A5266C00CEF64F /* LaunchScreen.storyboard */; };
 		F53327D920A5266C00CEF64F /* AdderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53327D820A5266C00CEF64F /* AdderTests.swift */; };
+		F550611C20AB855000E072CF /* TestScheduler+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F550611B20AB855000E072CF /* TestScheduler+Extensions.swift */; };
+		F550611F20AB860500E072CF /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F550611E20AB860500E072CF /* BaseTestCase.swift */; };
 		F57E90A620AA22FA008FF025 /* ValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57E90A520AA22FA008FF025 /* ValidationTests.swift */; };
 		F593889120A5358700EF362B /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593889020A5358700EF362B /* UILabel+Extensions.swift */; };
 		F593889320A5390B00EF362B /* ValidationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593889220A5390B00EF362B /* ValidationViewModel.swift */; };
@@ -64,6 +66,8 @@
 		F53327D420A5266C00CEF64F /* RxExamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxExamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F53327D820A5266C00CEF64F /* AdderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdderTests.swift; sourceTree = "<group>"; };
 		F53327DA20A5266C00CEF64F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F550611B20AB855000E072CF /* TestScheduler+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestScheduler+Extensions.swift"; sourceTree = "<group>"; };
+		F550611E20AB860500E072CF /* BaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
 		F57E90A520AA22FA008FF025 /* ValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTests.swift; sourceTree = "<group>"; };
 		F593889020A5358700EF362B /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		F593889220A5390B00EF362B /* ValidationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationViewModel.swift; sourceTree = "<group>"; };
@@ -163,11 +167,37 @@
 		F53327D720A5266C00CEF64F /* RxExamplesTests */ = {
 			isa = PBXGroup;
 			children = (
-				F53327D820A5266C00CEF64F /* AdderTests.swift */,
-				F53327DA20A5266C00CEF64F /* Info.plist */,
-				F57E90A520AA22FA008FF025 /* ValidationTests.swift */,
+				F550611920AB850A00E072CF /* Assets */,
+				F550611A20AB853B00E072CF /* Extensions */,
+				F550611820AB850200E072CF /* Tests */,
 			);
 			path = RxExamplesTests;
+			sourceTree = "<group>";
+		};
+		F550611820AB850200E072CF /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F550611E20AB860500E072CF /* BaseTestCase.swift */,
+				F53327D820A5266C00CEF64F /* AdderTests.swift */,
+				F57E90A520AA22FA008FF025 /* ValidationTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		F550611920AB850A00E072CF /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F53327DA20A5266C00CEF64F /* Info.plist */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		F550611A20AB853B00E072CF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F550611B20AB855000E072CF /* TestScheduler+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F593888F20A5357400EF362B /* Extensions */ = {
@@ -528,7 +558,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F550611F20AB860500E072CF /* BaseTestCase.swift in Sources */,
 				F57E90A620AA22FA008FF025 /* ValidationTests.swift in Sources */,
+				F550611C20AB855000E072CF /* TestScheduler+Extensions.swift in Sources */,
 				F53327D920A5266C00CEF64F /* AdderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -725,7 +757,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6KM367XE7J;
-				INFOPLIST_FILE = RxExamplesTests/Info.plist;
+				INFOPLIST_FILE = RxExamplesTests/Assets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -747,7 +779,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6KM367XE7J;
-				INFOPLIST_FILE = RxExamplesTests/Info.plist;
+				INFOPLIST_FILE = RxExamplesTests/Assets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

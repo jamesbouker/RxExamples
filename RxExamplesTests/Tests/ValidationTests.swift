@@ -11,21 +11,14 @@ import RxTest
 import XCTest
 @testable import RxExamples
 
-class ValidationTests: XCTestCase {
-
+class ValidationTests: BaseTestCase {
 	var viewModel: ValidationViewModel!
-	var scheduler: TestScheduler!
-	var bag: DisposeBag!
-
-	override func setUp() {
-		super.setUp()
-		bag = DisposeBag()
+	
+	override func setupViewModel() {
 		viewModel = ValidationViewModel()
-		scheduler = TestScheduler(initialClock: 0)
 	}
 
-	func testUsernameAndPasswordValidation() {
-
+	func createInputForUsernameAndPasswordValidationTest() -> ValidationViewModel.Input{
 		let username = scheduler.createHotObservable([
 			next(0, ""),
 			next(10, "u"),
@@ -34,7 +27,7 @@ class ValidationTests: XCTestCase {
 			next(40, "user"),
 			next(50, "user1"),
 			next(60, "user12"),
-		]).asObservable()
+			]).asObservable()
 
 		let password = scheduler.createHotObservable([
 			next(0, ""),
@@ -48,17 +41,19 @@ class ValidationTests: XCTestCase {
 			next(180, "password"),
 			next(190, "password1"),
 			next(200, "password1S")
-		]).asObservable()
+			]).asObservable()
 
-		let input = ValidationViewModel.Input(username: username, password: password)
+		return ValidationViewModel.Input(username: username, password: password)
+	}
+
+	func testUsernameAndPasswordValidation() {
+
+		let input = createInputForUsernameAndPasswordValidationTest()
 		let output = viewModel.transform(input: input)
 
-		let bothOk = scheduler.createObserver(Bool.self)
-		let userOk = scheduler.createObserver(Bool.self)
-		let passOk = scheduler.createObserver(Bool.self)
-		output.bothOk.bind(to: bothOk).disposed(by: bag)
-		output.usernameOk.bind(to: userOk).disposed(by: bag)
-		output.passOk.bind(to: passOk).disposed(by: bag)
+		let bothOk = scheduler.record(source: output.bothOk)
+		let userOk = scheduler.record(source: output.usernameOk)
+		let passOk = scheduler.record(source: output.passOk)
 
 		scheduler.start()
 

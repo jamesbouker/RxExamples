@@ -14,30 +14,23 @@ import RxTest
 
 @testable import RxExamples
 
-class AdderTests: XCTestCase {
-
-	var bag: DisposeBag!
+class AdderTests: BaseTestCase {
 	var viewModel: AdderViewModel!
-	var testScheduler: TestScheduler!
 
-	override func setUp() {
-		super.setUp()
-		bag = DisposeBag()
+	override func setupViewModel() {
 		viewModel = AdderViewModel()
-		testScheduler = TestScheduler(initialClock: 0)
 	}
 
 	func testMath() {
-		let text1 = testScheduler.createHotObservable([next(1, "1"), next(100, "2")]).asObservable()
-		let text2 = testScheduler.createHotObservable([next(2, "2"), next(200, "-2"), next(500, "0")]).asObservable()
-		let text3 = testScheduler.createHotObservable([next(3, "3"), next(300, "10"), next(400, "-100")]).asObservable()
+		let text1 = scheduler.createHotObservable([next(1, "1"), next(100, "2")]).asObservable()
+		let text2 = scheduler.createHotObservable([next(2, "2"), next(200, "-2"), next(500, "0")]).asObservable()
+		let text3 = scheduler.createHotObservable([next(3, "3"), next(300, "10"), next(400, "-100")]).asObservable()
 		let numbers = [text1, text2, text3]
 		let input = AdderViewModel.Input(numbers: numbers)
 		let output = viewModel.transform(input: input)
 
-		let observer = testScheduler.createObserver(String.self)
-		output.solution.bind(to: observer).disposed(by: bag)
-		testScheduler.start()
+		let observer = scheduler.record(source: output.solution)
+		scheduler.start()
 
 		let expectedEvents = [
 			next(3, "6"),
