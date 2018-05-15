@@ -39,7 +39,9 @@ class ValidationViewModel: ViewModelType {
         let passUpper = pass.map(containsUpper)
         let passLower = pass.map(containsLower)
 
-        let passOk = pass.map { $0.count > 8 && containsNum($0) && containsUpper($0) && containsLower($0) }
+        let passOk = pass.map {
+			$0.count > 8 && containsNum($0) && containsUpper($0) && containsLower($0)
+		}
         let bothOk = Observable.combineLatest(usernameOk, passOk) { $0 && $1 }
         return Output(passLength: passLength.color,
                       passNumber: passNumber.color,

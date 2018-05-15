@@ -30,23 +30,28 @@ class ValidationTests: XCTestCase {
 	func testSimple() {
 
 		let username = scheduler.createHotObservable([
+			next(0, ""),
 			next(10, "u"),
-			next(20, "s"),
-			next(30, "e"),
-			next(40, "r"),
-			next(50, "r"),
+			next(20, "us"),
+			next(30, "use"),
+			next(40, "user"),
+			next(50, "user1"),
+			next(60, "user12"),
 		]).asObservable()
 
 		let password = scheduler.createHotObservable([
-			next(10, ""),
+			next(0, ""),
 			next(110, "p"),
-			next(120, "a"),
-			next(130, "s"),
-			next(140, "s"),
-			next(150, "w"),
-			next(160, "o"),
-			next(170, "r"),
-			next(180, "d")
+			next(120, "pa"),
+			next(130, "pas"),
+			next(140, "pass"),
+			next(150, "passw"),
+			next(160, "passwo"),
+			next(170, "passwor"),
+			next(180, "password"),
+			next(190, "password1"),
+			next(200, "password1S")
+
 		]).asObservable()
 		let input = ValidationViewModel.Input(username: username, password: password)
 		let output = viewModel.transform(input: input)
@@ -56,11 +61,13 @@ class ValidationTests: XCTestCase {
 		scheduler.start()
 
 		let expectedBothOk = [
+			next(0, false),
 			next(10, false),
 			next(20, false),
 			next(30, false),
 			next(40, false),
 			next(50, false),
+			next(60, false),
 			next(110, false),
 			next(120, false),
 			next(130, false),
@@ -68,7 +75,9 @@ class ValidationTests: XCTestCase {
 			next(150, false),
 			next(160, false),
 			next(170, false),
-			next(180, false)
+			next(180, false),
+			next(190, false),
+			next(200, true)
 		]
 		XCTAssertEqual(bothOk.events, expectedBothOk)
 	}
