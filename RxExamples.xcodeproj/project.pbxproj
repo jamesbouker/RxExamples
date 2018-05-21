@@ -16,6 +16,11 @@
 		F53327D920A5266C00CEF64F /* AdderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53327D820A5266C00CEF64F /* AdderTests.swift */; };
 		F550611C20AB855000E072CF /* TestScheduler+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F550611B20AB855000E072CF /* TestScheduler+Extensions.swift */; };
 		F550611F20AB860500E072CF /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F550611E20AB860500E072CF /* BaseTestCase.swift */; };
+		F568813220B30FD700E2CFE2 /* Pokemon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F568813120B30FD700E2CFE2 /* Pokemon.storyboard */; };
+		F568813420B30FEE00E2CFE2 /* PokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F568813320B30FED00E2CFE2 /* PokemonViewController.swift */; };
+		F568813620B3101100E2CFE2 /* PokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F568813520B3101100E2CFE2 /* PokemonViewModel.swift */; };
+		F568813820B3101800E2CFE2 /* PokemonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F568813720B3101800E2CFE2 /* PokemonUI.swift */; };
+		F568813A20B3136F00E2CFE2 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F568813920B3136F00E2CFE2 /* PokemonAPI.swift */; };
 		F57E90A620AA22FA008FF025 /* ValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57E90A520AA22FA008FF025 /* ValidationTests.swift */; };
 		F593889120A5358700EF362B /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593889020A5358700EF362B /* UILabel+Extensions.swift */; };
 		F593889320A5390B00EF362B /* ValidationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593889220A5390B00EF362B /* ValidationViewModel.swift */; };
@@ -68,6 +73,11 @@
 		F53327DA20A5266C00CEF64F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F550611B20AB855000E072CF /* TestScheduler+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestScheduler+Extensions.swift"; sourceTree = "<group>"; };
 		F550611E20AB860500E072CF /* BaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
+		F568813120B30FD700E2CFE2 /* Pokemon.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pokemon.storyboard; sourceTree = "<group>"; };
+		F568813320B30FED00E2CFE2 /* PokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewController.swift; sourceTree = "<group>"; };
+		F568813520B3101100E2CFE2 /* PokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewModel.swift; sourceTree = "<group>"; };
+		F568813720B3101800E2CFE2 /* PokemonUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonUI.swift; sourceTree = "<group>"; };
+		F568813920B3136F00E2CFE2 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 		F57E90A520AA22FA008FF025 /* ValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTests.swift; sourceTree = "<group>"; };
 		F593889020A5358700EF362B /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		F593889220A5390B00EF362B /* ValidationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationViewModel.swift; sourceTree = "<group>"; };
@@ -200,6 +210,18 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		F568813020B30FC700E2CFE2 /* Pokemon */ = {
+			isa = PBXGroup;
+			children = (
+				F568813120B30FD700E2CFE2 /* Pokemon.storyboard */,
+				F568813920B3136F00E2CFE2 /* PokemonAPI.swift */,
+				F568813720B3101800E2CFE2 /* PokemonUI.swift */,
+				F568813520B3101100E2CFE2 /* PokemonViewModel.swift */,
+				F568813320B30FED00E2CFE2 /* PokemonViewController.swift */,
+			);
+			path = Pokemon;
+			sourceTree = "<group>";
+		};
 		F593888F20A5357400EF362B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +305,7 @@
 				F5C79F3120A87AF40036FBD3 /* Feedback */,
 				F5C79F3020A87AE60036FBD3 /* Simple */,
 				F5C79F2F20A87AD10036FBD3 /* Table Views */,
+				F568813020B30FC700E2CFE2 /* Pokemon */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -398,6 +421,7 @@
 			files = (
 				F53327CE20A5266C00CEF64F /* LaunchScreen.storyboard in Resources */,
 				F53327CB20A5266C00CEF64F /* Assets.xcassets in Resources */,
+				F568813220B30FD700E2CFE2 /* Pokemon.storyboard in Resources */,
 				F53327C920A5266B00CEF64F /* Main.storyboard in Resources */,
 				F5E8DB8720A52A0900602E84 /* Validation.storyboard in Resources */,
 				F5E8DB8320A528B200602E84 /* Adder.storyboard in Resources */,
@@ -463,12 +487,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RxExamples/Pods-RxExamples-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxFeedback/RxFeedback.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxFeedback.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -535,13 +565,17 @@
 			files = (
 				F5C79F3320A87B130036FBD3 /* SimpleTableViewController.swift in Sources */,
 				F5A3C6EF20A68F65001C9AA9 /* Observable+Extensions.swift in Sources */,
+				F568813A20B3136F00E2CFE2 /* PokemonAPI.swift in Sources */,
 				F593889120A5358700EF362B /* UILabel+Extensions.swift in Sources */,
 				F593889320A5390B00EF362B /* ValidationViewModel.swift in Sources */,
 				F5E8DB8020A528B200602E84 /* ViewModelType.swift in Sources */,
 				F5A3C6E920A67E06001C9AA9 /* CounterViewModel.swift in Sources */,
+				F568813620B3101100E2CFE2 /* PokemonViewModel.swift in Sources */,
+				F568813820B3101800E2CFE2 /* PokemonUI.swift in Sources */,
 				F53327C420A5266B00CEF64F /* AppDelegate.swift in Sources */,
 				F5A3C6ED20A682F3001C9AA9 /* CounterFeedback.swift in Sources */,
 				F593889820A5481A00EF362B /* UIButton+Extensions.swift in Sources */,
+				F568813420B30FEE00E2CFE2 /* PokemonViewController.swift in Sources */,
 				F593889A20A54BB800EF362B /* BaseViewController.swift in Sources */,
 				F5E8DB8120A528B200602E84 /* AdderViewModel.swift in Sources */,
 				F5E8DB8220A528B200602E84 /* AdderViewController.swift in Sources */,
