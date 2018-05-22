@@ -9,10 +9,9 @@
 import Foundation
 import Moya
 
-let provider = MoyaProvider<PokemonAPI>()
-
 enum PokemonAPI {
 	case pokedexList
+	case pokedex(id: Int)
 }
 
 extension PokemonAPI: TargetType {
@@ -23,6 +22,7 @@ extension PokemonAPI: TargetType {
 	var path: String {
 		switch self {
 		case .pokedexList: return "/pokedex"
+		case .pokedex(let id): return "/pokedex/\(id)"
 		}
 	}
 
@@ -36,7 +36,7 @@ extension PokemonAPI: TargetType {
 
 	var task: Task {
 		switch self {
-		case .pokedexList: return .requestPlain
+		case .pokedexList, .pokedex: return .requestPlain
 		}
 	}
 
